@@ -7,23 +7,18 @@ int main()
 	{
 		std::cout << "What's your yes or no question?" << std::endl;
 		char qAnswer[100];
-		std::cin.getline(qAnswer,sizeof(qAnswer));
+		std::cin.getline(qAnswer,sizeof(qAnswer)); // Puts answer in a char array, serves no purpose but waiting for an answer
 		bool yesOrNo = true;
-		bool answer;
-		if (yesOrNo)
+		int i = rand(); //Assign random number
+		
+		switch (i % 2) //Even number returns "Yes". Uneven number returns "No".
 		{
-			int i;
-			i = rand();
-			if (i % 2 == 0)
-			{
-				answer = true;
-				std::cout << "Yes" << std::endl;
-			}
-			else
-			{
-				answer = false;
-				std::cout << "No" << std::endl;
-			}
+		case 0:
+			std::cout << "Yes" << std::endl;
+			break;
+		default:
+			std::cout << "No" << std::endl;
+			break;
 		}
 	}
 }
